@@ -1,0 +1,18 @@
+<select [(ngModel)]="selectedValue" (change)="handleChange()">
+    <option [value]="book.type" *ngFor="let book of objArr">{{book.name}}</option>
+  </select>
+
+
+
+  <table *ngIf="selectedValue" border="1">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>type</th>
+      </tr>
+      <tr *ngFor="let val of objArr | title: selectedValue ">
+          <td>{{val.id}}</td>
+          <td>{{val.name}}</td>
+          <td>{{val.type}}</td>
+      </tr>
+  </table>
